@@ -1,0 +1,47 @@
+dvwa@webserver
+m1jnDVWAserver
+
+root@SQL
+m1jnSQLserver
+
+ifconfig:
+	192.168.0.108
+
+sudo service ssh start
+sudo apt-get purge `dpkg -l | grep php| awk '{print $2}' |tr "\n" " "`
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install php5.6
+sudo apt-get install php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-xml
+sudo service apache2 start
+
+You can check if apache2 is running in your browser. Enter the webserver ip
+
+sudo a2dismod php7.0
+sudo a2enmod php5.6
+sudo service apache2 restart
+sudo apt-get install unzip
+sudo wget /var/www https://github.com/ethicalhack3r/DVWA/archive/master.zip &
+
+"Moving the file to the /var/www/ folder"
+
+sudo mv master.zip /var/www/ &
+
+"Unzipping the file and moving it to /var/www/html."
+"The file will be named: DVWA-master"
+
+sudo unzip /var/www/master.zip -d /var/www/html/ &
+
+"Now we need to create a file with the config.inc.php settings so we can launch the DVWA-master server"
+"You will need to cd to following dir and then open the following file:"
+
+cd /var/www/html/DVWA-server/config/
+sudo nano config.inc.php.dist
+save it as new file named: config.php.inc
+
+
+
+
+
+
