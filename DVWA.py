@@ -7,7 +7,7 @@ singlehash = '''
 
 print("Starting the installation")
 print("Installing php package..")
-subprocess.call("sudo apt-get purge `dpkg -l | grep php| awk '{print( $2}' |tr "\n" " "`", shell=True)
+subprocess.call('''sudo apt-get purge `dpkg -l | grep php| awk '{print( $2}' |tr "\n" " "`''', shell=True)
 print(singlehash)
 
 print("Adding php5 repository to apt")
