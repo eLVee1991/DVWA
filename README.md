@@ -6,7 +6,7 @@ These scripts and .txt help with the installation
 ## How to use DVWA.py
 You need to have unzip!
 if you do not have unzip please do:
-  sudo apt-get install unzip
+sudo apt-get install unzip
   
 cd to /tmp
 wget https://github.com/eLVee1991/DVWA/archive/master.zip
