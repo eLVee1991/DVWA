@@ -12,7 +12,7 @@ doublehash = '''
 
 
 installation_list = [
-'''sudo aptitude purge `dpkg -l | grep php| awk '{print $2}' |tr "\n" " "`''',
+'sudo aptitude purge `dpkg -l | grep php| awk \'{print $2}\' |tr "\n" " "`',
 'sudo add-apt-repository ppa:ondrej/php',
 'sudo apt-get update',
 'sudo apt-get upgrade',
@@ -62,6 +62,7 @@ if question == "y":
 		installation()
 		question2 = input("You need to continue manually from here. Do you want to continue? (y/n): ")
 		if question2 == "y":
+			print(singlehash)
 			print("Now we need to create a file with the config.inc.php settings so we can launch the DVWA-master server")
 			print("You will need to cd to following dir and then open the following file:")
 			print("")
@@ -69,12 +70,15 @@ if question == "y":
 			print("sudo nano config.inc.php.dist")
 			print("Save it as a new file named: config.php.inc")
 			print("")
+			print(singlehash)
+			exit()
 
 		if question2 == "n":
 			exit()
 
 		else:
 			print("Wrong input! Please answer with y/n..")
+			print("Please run the script again.)
 
 if question == "n":
 	exit()
