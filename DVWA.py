@@ -78,7 +78,7 @@ if question == "y":
 
 		else:
 			print("Wrong input! Please answer with y/n..")
-			print("Please run the script again.)
+			print("Please run the script again.")
 
 if question == "n":
 	exit()
